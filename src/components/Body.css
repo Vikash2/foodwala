@@ -1,0 +1,42 @@
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+  width: 40%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search > input {
+  width: 100%;
+  padding: 0.5rem;
+  height: 2.5rem;
+}
+.search > button {
+  padding: 0.5rem;
+  height: 2.5rem;
+  margin-left: 0.1rem;
+  background-color: #0a1435;
+  border: none;
+  color: white;
+}
+.search > button:hover {
+  transform: scale(0.9);
+}
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f8fa;
+  text-decoration: none;
+}
