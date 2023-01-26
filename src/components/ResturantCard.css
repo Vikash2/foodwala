@@ -22,8 +22,6 @@
 .card > img {
   width: 100%;
 }
-
-p {
-  text-decoration: none;
-  opacity: 0.8;
+.card-contents h5 {
+  color: black;
 }
