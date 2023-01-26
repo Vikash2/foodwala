@@ -1,78 +1,51 @@
-.resturant-container-shimmer {
+.resturant-shimmer-container {
+  max-width: 120rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.resturant-shimmer-banner {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 2rem;
+}
+
+.resturant-line {
+  width: 80%;
+  height: 10px;
+  background: #f6f8fa;
+  margin: 10px;
+  border-radius: 2px;
+}
+
+.resturant-contents {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 2rem;
   background-color: #f6f8fa;
 }
-.resturant {
-  width: 100%;
-  height: 35vh;
-  background-color: #0a1435;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
+
+.menu-title-shimmer,
+.menu-details,
+.cart {
+  width: 90%;
+  height: 50vh;
+  background-color: white;
+  padding: 2rem;
+  margin-top: 2rem;
 }
 
-.resturant > img {
-  width: 20%;
-}
-
-.resturant-details {
-  flex-direction: column;
-}
-
-.resturant,
-.resturant-info,
-.resturant-details,
-.resturant-satistics,
-.resturant-offers,
-.resturant-menu-details {
-  display: flex;
-}
-
-.resturant-info {
-  flex-direction: column;
-  line-height: 2rem;
-}
-
-.resturant-satistics {
-  justify-content: center;
-  align-items: center;
-  padding-top: 1rem;
-}
-.rating,
-.delivery,
-.cost {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-  justify-content: space-evenly;
-}
-
-.resturant-offers {
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.offer-details {
-  list-style-type: none;
-  margin: 2.5rem;
-}
-.offer-details li {
-  line-height: 2rem;
-}
-.resturant-menu-details {
-  height: 100%;
-  padding-top: 1rem;
-  justify-content: space-around;
-}
-
-.menu-items {
-  width: 50%;
-}
-
-.menu-items > ul {
-  list-style-type: none;
-}
-h1 {
-  color: grey;
+.menu-details > .resturant-line {
+  margin: 20px;
 }

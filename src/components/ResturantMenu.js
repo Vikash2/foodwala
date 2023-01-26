@@ -4,11 +4,17 @@ import useResturant from '../utils/useResturant';
 import MenuItemCard from './MenuItemCard';
 import './ResturantMenu.css';
 import { IMG_CDN_URL } from '../Constants';
+import ShimmerResturant from './ShimmerResturant';
 
 const ResturantMenu = () => {
     const { resId } = useParams();
     const resturant = useResturant(resId);
-    return (
+
+    if (resturant === undefined) {
+        return <ShimmerResturant />;
+    }
+
+    return (Object.keys(resturant).length === 0 ? (<ShimmerResturant />) : (
         <React.Fragment>
             <div className="resturant-container">
                 <div className="resturant">
@@ -66,7 +72,7 @@ const ResturantMenu = () => {
                     </div>
                 </div>
             </div>
-        </React.Fragment>
+        </React.Fragment>)
     )
 }
 
