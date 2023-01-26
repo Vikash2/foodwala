@@ -3,6 +3,7 @@ import ResturantCard from './ResturantCard';
 import './Body.css';
 import { Link } from 'react-router-dom';
 import ShimmerBody from './ShimmerBody';
+import useBody from '../utils/useBody';
 
 const filterResturants = (searchTxt, allResturants) => {
     console.log(allResturants);
@@ -17,21 +18,8 @@ const filterResturants = (searchTxt, allResturants) => {
 const Body = () => {
 
     const [searchText, setSearchText] = useState("");
-    const [allResturantList, setAllResturantList] = useState([]);
-    const [filterResturanList, setFilterResturanList] = useState([]);
+    const { allResturantList, filterResturanList } = useBody();
 
-    useEffect(() => {
-        getResturantList();
-    }, []);
-
-    const getResturantList = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
-        const json = await data.json();
-        // console.log(json); 
-        setAllResturantList(json?.data?.cards[2]?.data?.data.cards);
-        setFilterResturanList(json?.data?.cards[2]?.data?.data.cards);
-        // console.log(allResturantList);
-    }
     /** Early Return */
     if (!allResturantList) return null;
 

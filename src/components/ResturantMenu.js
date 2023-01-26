@@ -1,31 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import useResturant from '../utils/useResturant';
 import MenuItemCard from './MenuItemCard';
-import MenuItems from './MenuItemCard';
 import './ResturantMenu.css';
-import ShimmerResturant from './ShimmerResturant';
-
-const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"
+import { IMG_CDN_URL } from '../Constants';
 
 const ResturantMenu = () => {
-
     const { resId } = useParams();
-    console.log(resId);
-
-    const [resturant, setResturant] = useState(null);
-
-    useEffect(() => {
-        getResturantData();
-    }, [])
-
-    async function getResturantData() {
-        const response = await fetch("https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=" + resId);
-
-        const data = await response.json();
-        setResturant(data);
-    }
-
-    console.log(resturant?.data.menu.items);
+    const resturant = useResturant(resId);
     return (
         <React.Fragment>
             <div className="resturant-container">
@@ -52,7 +34,7 @@ const ResturantMenu = () => {
                             </div>
                             <div className='cost'>
                                 <h3>
-                                    {resturant?.data?.avgRating * 100}
+                                    {parseInt(resturant?.data?.avgRating * 100)}
                                 </h3>
                                 <p>Cost for two</p>
                             </div>
